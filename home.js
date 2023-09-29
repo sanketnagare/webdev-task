@@ -11,6 +11,23 @@
     return JSON.parse(loggedInUserJson);
 }
 
+$(document).ready(function () {
+    $("#toggleSidebar").click(function () {
+        $("#sidebar").toggleClass("sidebar-open");
+        $("#content").toggleClass("sidebar-open");
+
+        if ($("#sidebar").hasClass("sidebar-open")) {
+            $("#sidebar").css("display", "block");
+        } else {
+            $("#sidebar").css("display", "none");
+        }
+    });
+});
+
+
+
+
+
 // Function to update the user's details in localStorage
 function updateLoggedInUser(user) {
     localStorage.setItem("loggedInUser", JSON.stringify(user));

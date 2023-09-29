@@ -7,6 +7,35 @@ body{
     height: 100lvh;
 }
 
+#sidebar {
+    display: block;
+    height: 100vh;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -2;
+    background-color: #283a4d;
+    padding-top: 56px; /* Adjust based on your navbar height */
+    /* Other styles... */
+}
+
+
+
+#sidebar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    display: block;
+    transition: all 0.3s;
+}
+
+
+
+
+
+
 .header{
     background-color: #d3d3d3;;
     padding: 5px 5%;
@@ -52,6 +81,21 @@ input[type=date] {
     color: red;
     display: none;
 }
+.navbar.py-0 {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+.bg-primary{
+    background-color: #283a4d;
+}
+
+
+#sidebar{
+    max-width: 264px;
+    min-width: 264px;
+    transition: all 0.35s ease-in-out;
+}
+
 
 .dropdown-menu.show{
     background-color: #bebebe;
