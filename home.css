@@ -1,0 +1,157 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* background-color: #272121; */
+    width: 100%;
+    height: 100lvh;
+}
+
+.header{
+    background-color: #d3d3d3;;
+    padding: 5px 5%;
+    /* box-shadow: 2px 2px 2px  #252525; */
+    /* border-bottom: 1px solid black; */
+    display: flex;
+    justify-content: space-between;
+
+}
+input[type=date] {
+    background: rgba(129, 92, 92, 0.075);
+    padding: 0px 1em;
+    border-radius: 4px;
+}
+.form-group{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 1vw;
+    margin-bottom: 2%;
+}
+.form-group label{
+    width: 50%;
+    text-align: right;
+}
+.input-css{
+    display: flex;
+    justify-content: left;
+    width: 50%;
+    /* margin-left: 10%; */
+}
+
+.form-group #editDOB{
+    width: 100%;
+
+}
+
+.is-invalid {
+    border: 1px solid red;
+}
+
+.invalid-feedback {
+    color: red;
+    display: none;
+}
+
+.dropdown-menu.show{
+    background-color: #bebebe;
+    border: 1px solid black;
+    border-radius: 12px;
+    text-align: left;
+    position: absolute;
+    right: 0;
+    left: auto;
+    top: 90%;
+}
+
+.dropdown-item:hover{
+    border: 1px solid black;
+    border-radius: 12px;
+}
+.user-img{
+    height: 2em;
+    margin-top: 10px;
+    cursor: pointer;
+    /* width: 1em; */
+}
+#edit-details-form{
+    margin: 0;
+}
+#edit-details-success{
+    visibility: hidden;
+    min-width: 250px;
+    background-color: rgb(53, 172, 24);
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    text-align: center;
+    border-radius: 14px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    right: 40px;
+    top: 6rem;
+}
+#edit-details-success.show {
+    visibility: visible !important;
+    animation: fadein 0.5s, fadeout 0.5s 4.5s;
+}
+
+
+.error-message{
+	display: none;
+	color: red;
+	
+}
+@keyframes fadein{
+    from{
+        right: 0;
+        opacity: 0;
+    }
+    to{
+        right: 40px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeout {
+    from{
+        right: 40px;
+        opacity: 1;
+    }
+    to{
+        right: 0;
+        opacity: 0;
+    }
+}
+h1{
+    margin: 10px;
+}
+.is-invalid,
+.invalid-feedback{
+    display: none;
+}
+.view-modal-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.view-modal-body p {
+    display: flex;
+    width: 70%;
+    justify-content: space-between;
+    /* gap: 30%; */
+}
+
+.view-modal-body p strong {
+    width: 50%;
+    text-align: right;
+}
+
+.view-modal-body p span{
+    text-align: left;
+    width: 50%;
+    margin-left: 10%;
+}
+
