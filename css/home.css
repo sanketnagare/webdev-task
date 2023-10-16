@@ -1,50 +1,119 @@
 body{
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
-    /* background-color: #272121; */
-    width: 100%;
-    height: 100lvh;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
-#sidebar {
-    display: block;
+.vertical-nav {
+    min-width: 17rem;
+    width: 17rem;
     height: 100vh;
-    width: 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -2;
-    background-color: #283a4d;
-    padding-top: 56px; /* Adjust based on your navbar height */
-    /* Other styles... */
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s;
+    z-index: 1;
+    /* overflow-y: auto; */
+}
+.navbar-row{
+    z-index: 2;
 }
 
+.navbar {
+    z-index: 3; 
+}
 
+.page-content {
+    width: calc(100% - 17rem);
+    margin-left: 17rem;
+    transition: all 0.4s;
+} 
+  
+#sidebar.active {
+    margin-left: -17rem;
+}
+  
+#content.active {
+    width: 100%;
+    margin: 0;
+}
+  
+.separator {
+    margin: 2rem 0; 
+}
+  
+.index {
+    border-left: 1px solid white;
+    overflow-y: auto;
+}
 
-#sidebar a {
-    padding: 10px 15px;
-    text-decoration: none;
-    font-size: 18px;
+.links a{
+    width: 9rem;
+}
+
+.links a:hover{
     color: white;
+}
+
+/* submenus in sidebar */
+.menu .item a{
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
     display: block;
-    transition: all 0.3s;
+    padding: 5px 30px;
+    line-height: 2em;
+
+}
+.menu .item a i{
+    position: absolute;
+    top: 0;
+}
+.menu .item a:hover{
+    background: rgb(126, 126, 126);
+    transition: 0.3s ease;
+}
+
+.menu .item .sub-menu{
+    display: none;
+}
+
+.rotate{
+    transform: rotate(90deg);
+}
+
+.selected{
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
+.menu .item a .dropdown{
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 13px 30px;
+    transition: 0.3s ease;
+}
+
+.menu .item .sub-menu a{
+    padding-left: 4rem;
+}
+.textarea{
+	background: rgba(129, 92, 92, 0.075);
+	border-top: 2px solid black;
+	border-left: 2px solid black;
+	border-bottom: 2px solid grey;
+	border-right: 2px solid grey;
+}
+#edit-preffered-language{
+    background: rgba(129, 92, 92, 0.075);
+    box-shadow: none;
+	border-top: 2px solid black;
+	border-left: 2px solid black;
+	border-bottom: 2px solid grey;
+	border-right: 2px solid grey;
 }
 
 
-
-
-
-
-.header{
-    background-color: #d3d3d3;;
-    padding: 5px 5%;
-    /* box-shadow: 2px 2px 2px  #252525; */
-    /* border-bottom: 1px solid black; */
-    display: flex;
-    justify-content: space-between;
-
-}
+/* old file css no bootstrap */
 input[type=date] {
     background: rgba(129, 92, 92, 0.075);
     padding: 0px 1em;
@@ -57,6 +126,17 @@ input[type=date] {
     gap: 1vw;
     margin-bottom: 2%;
 }
+.form-group-skills{
+    display: flex;
+    gap: 2vw;
+    justify-content: end;
+}
+
+.skillinput{
+    width: 65%;
+}
+
+
 .form-group label{
     width: 50%;
     text-align: right;
@@ -70,7 +150,6 @@ input[type=date] {
 
 .form-group #editDOB{
     width: 100%;
-
 }
 
 .is-invalid {
@@ -89,16 +168,8 @@ input[type=date] {
     background-color: #283a4d;
 }
 
-
-#sidebar{
-    max-width: 264px;
-    min-width: 264px;
-    transition: all 0.35s ease-in-out;
-}
-
-
 .dropdown-menu.show{
-    background-color: #bebebe;
+    background-color: #ffffff;
     border: 1px solid black;
     border-radius: 12px;
     text-align: left;
@@ -131,7 +202,7 @@ input[type=date] {
     border-radius: 14px;
     padding: 16px;
     position: fixed;
-    z-index: 1;
+    z-index: 6;
     right: 40px;
     top: 6rem;
 }
@@ -168,7 +239,7 @@ input[type=date] {
     }
 }
 h1{
-    margin: 10px;
+    margin: 1px;
 }
 .is-invalid,
 .invalid-feedback{
@@ -185,7 +256,6 @@ h1{
     display: flex;
     width: 70%;
     justify-content: space-between;
-    /* gap: 30%; */
 }
 
 .view-modal-body p strong {
@@ -199,3 +269,20 @@ h1{
     margin-left: 10%;
 }
 
+@media (max-width: 768px) {
+    #sidebar {
+        /* small screens sidebar is hidden default */
+        margin-left: -100%;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+    #content {
+        width: 100%;
+        margin: 0;
+    }
+    #content.active {
+        margin-left: 0;
+        width: 100%;
+    }
+}

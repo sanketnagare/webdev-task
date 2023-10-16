@@ -4,53 +4,164 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signup</title>
-    <link rel="stylesheet" href="signup.css">
+
+    <!-- IntlTelInput js and css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <!-- auto suggesttag -->
+    <link rel="stylesheet" type="text/css" href="css/amsify.suggestags.css">
+    <script type="text/javascript" src="js/jquery.amsify.suggestags.js"></script>
+
+    
+    <!-- cutom css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/signup.css">
     <link rel="stylesheet" href="css/style.css"> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-    <div class="signup-wrapper">
-        <div class="signup-div">
+    <div class="wrapper overflow-hidden" >
+        <div class="signup-div" style="max-height:fit-content; overflow-y: auto; ">
             <h1>SIGNUP</h1>
-                <form action="#" id="signupForm">
-                    <div class="signup-inputs">
+                <form action="#" id="signupForm" class="w-100 m-0">
+                    <div class="col d-flex flex-column justify-content-start gap-3">
 
-                        <label for="email">Enter email:</label>
-                        <input type="email" name="email" id="email">
-                        <div class="invalid-feedback" id="email-error"></div>
+                        <div class="row-1 d-flex flex-row justify-content-center align-content-center w-100 gap-3">
+                                <div class="d-flex flex-column w-100">
+                                    <label class="m-0" for="fname">Enter firstname:</label>
+                                    <input class="w-75"  type="text" name="fname" id="fname">
+                                    <div class="invalid-feedback" id="fname-error"></div>
+                                </div>
+                                <div class="d-flex flex-column justify-content-center align-content-center w-100">
+                                    <label class="m-0" for="lname">Enter Lastname:</label>
+                                    <input class="" type="text" name="lname" id="lname">
+                                    <div class="invalid-feedback" id="lname-error"></div>
+                                </div>
+                        </div>
 
-                        <label for="name">Enter name:</label>
-                        <input type="text" name="name" id="name">
-                        <div class="invalid-feedback" id="name-error"></div>
+                        <div class="row-1">
+                            <label class="m-0" for="email">Enter email:</label>
+                            <input type="email" name="email" id="email">
+                            <div class="invalid-feedback" id="email-error"></div>
+                        </div>
 
-                        <label for="phone">Enter phone number:</label>
-                        <input type="text" name="phone" id="phone">
-                        <div class="invalid-feedback" id="phone-error"></div>
+                        <div class="row-1 d-flex flex-column mt-1">
+                            <div class="alert alert-info" style="display: none;"></div>
+                       
+                            <label class="m-0" for="phone">Enter phone number:</label>
+                            <input type="text" name="phone" id="phone">
+                            <span id="phone-error" class="error-message fs-6"></span>
+                        </div>
 
-                        <label for="DOB">Enter date of birth:</label>
-                        <input type="date" name="DOB" id="DOB" max="2020-01-01">
-                        <div class="invalid-feedback" id="DOB-error"></div>
+                        <div class="row-1 d-flex flex-column mt-1">
+                            <label class="m-0" for="DOB">Enter date of birth:</label>
+                            <input class="px-3" type="date" name="DOB" id="DOB" max="2020-01-01">
+                            <div class="invalid-feedback" id="DOB-error"></div>
+                        </div>
 
-                        <label for="firstpassword">Enter password:</label>
-                        <input type="password" name="password" id="password">
-                        <div class="invalid-feedback" id="password-error"></div>
+                        <div class="row-1 mt-2 d-flex align-baseline">
+                            <label class="m-0" for="DOB">Select gender:</label>
+                            <div class="form-check form-check-inline d-flex align-baseline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="male">
+                                <label class="form-check-label" for="inlineRadio1">male</label>
+                              </div>
+                              <div class="form-check form-check-inline d-flex align-baseline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="female">
+                                <label class="form-check-label" for="inlineRadio2">female</label>
+                              </div>    
+                        </div>
+                        <div class="invalid-feedback" id="gender-error"></div>
 
-                        <!-- <label for="password">Confirm password:</label>
-                        <input type="password" name="confirmpassword" id="confirmpassword"> -->
+                        <div class="row-1">
+                                <label class="m-0" for="floatingTextarea">Address</label>
+                                <textarea class="textarea" name="address" id="address" rows="2"></textarea>    
+                                <div class="invalid-feedback" id="address-error"></div>               
+                        </div>
+
+                        <div class="row-1">
+                            <label class="m-0" for="skills">Programming skills</label>
+                            <input type="text" name="skills" value=""/>
+                        </div>
+
+
+                        <div class="row-1">
+                            <div class="w-100">
+                                <label class="m-0" for="preffered-language">Preffered language</label>
+                                    <select class="form-select form-select-lg" id="preffered-language" aria-label=".form-select-lg example">
+                                        <option selected>Preffered language</option>
+                                    </select>
+                                  <div class="invalid-feedback" id="lang-error"></div>
+                            </div>                                    
+                        </div>
+
+                                        
+                        <div class="row-1 w-100 m-0">
+                            <label class="m-0">Roles:</label>
+                            <ul class="list-unstyled d-flex justify-content-around gap-3 ">
+                                <!-- Admin Section -->
+                                <li class="">
+                                    <input type="checkbox" id="adminOption">
+                                    <label for="adminOption">Admin</label>        
+                                    
+                                    <ul class="">
+                                        <li class="list-unstyled"><label><input type="checkbox" value="Read" class="adminSubOption"> Read</label></li>
+                                        <li class="list-unstyled"><label><input type="checkbox" value="Write" class="adminSubOption"> Write</label></li>
+                                    </ul>                         
+                                </li>
+                            
+                                <!-- User Section -->
+                                <li>
+                                    <div class="">
+                                        <div>
+                                            <input type="checkbox" id="userOption">
+                                            <label for="userOption"> User</label>
+                                        </div>
+                                        
+                                        <ul >
+                                            <li class="list-unstyled"><label><input type="checkbox" value="Read" class="userSubOption"> Read</label></li>
+                                            <li class="list-unstyled"><label><input type="checkbox" value="Write" class="userSubOption"> Update</label></li>
+                                        </ul>
+
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="row-1">
+                            <label class="m-0" for="firstpassword">Enter password:</label>
+                            <input type="password" name="password" id="password">
+                            <div class="invalid-feedback" style="width: 100%;" id="password-error"></div>
+                        </div>
+
+                        <div class="row-1">
+                            <label class="m-0" for="confirmpassword">Confirm password:</label>
+                            <input type="password" name="confirmpassword" id="confirmpassword">
+                            <div class="invalid-feedback" id="password-error"></div>
+                        </div>
                     </div>
                     
-                    
-                    <button class="button">Signup</button> 
-                    <div id="correctbar">Signup successful..</div>  
-                    <!-- <div class="loginlinkdiv"> -->
-                        <p>Already have an account? <a href="login.html" id="loginlink">Login</a></p>
-                      <!-- </div> -->
-
+                    <div class="btnclass mt-4 d-flex flex-column">
+                        <button class="button w-50 p-1">Signup</button> 
+                        <div id="correctbar">Signup successful..</div>  
+                    </div>
                 </form>
+                <p>Already have an account? <a href="login.html" id="loginlink">Login</a></p>
+
         </div>
-        <script src="signup.js"></script>
+    <script src="js/signup.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
 </body>
 </html>

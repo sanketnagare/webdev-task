@@ -1,5 +1,5 @@
 /* login form */
-
+@import url('centraol.css');
 .login-body {
 	margin: 0;
 	padding: 0;
@@ -7,13 +7,7 @@
     background-color: #2e2e2e;
 
 }
-.wrapper {
-	width: 100%;
-	height: 100vh;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
+
 form{
     margin: 0;
     width: 80%;
@@ -23,17 +17,14 @@ form{
     align-items: center;
 }
 
-form > input {
-    /* border: solid 1px rgba(54, 53, 53, 0.25); */
-}
 .main-div {
-	width: 55%;
+	width: 50%;
 	height: 66vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-    background-color: rgb(208, 226, 241);
+    background-color: rgb(255, 255, 255);
 	border: rgb(0, 0, 0) 2px solid;
 	border-radius: 14px;
 	box-shadow: 2px 4px 10px  black;
@@ -49,42 +40,10 @@ form > input {
 }
 
 
-.login-div h1{
-	margin: 16px;
-    /* color: rgb(86, 7, 160); */
-}
-
-.hyperlinks{
-	display: flex;
-	gap: 30px;
-	justify-content: center;
-	align-items: center;
-}
-
-#email{
- padding: 0px;
- /* border: solid 2px rgba(0, 0, 0, 0.25); */
-}
-
-#password{
-	padding: 0;
-    /* border: solid 2px rgba(0, 0, 0, 0.25); */
-}
-
-#username{
-	padding: 0;
-    /* border: solid 2px rgba(0, 0, 0, 0.25); */
-    margin-bottom: 15px;
-}
-
 .button{
-	margin-top: 20px;
-	padding: 10px 10px;
+	margin-top: 1em;
+	padding: 0.5em;
     width: 10vw;
-}
-
-a{
-    padding-top: 15px;
 }
 
 .login-inputs {
@@ -94,98 +53,14 @@ a{
     width: 99%;
 }
 
-.login-inputs label{
-	margin: 0;
-}
 
-.red-border {
-    border: 2px solid red;
-}
-
-#errorbar {
-    visibility: hidden;
-    min-width: 250px;
-    background-color: rgb(199, 0, 0);
-    color: rgb(255, 255, 255);
-    font-weight: bold;
-    text-align: center;
-    border-radius: 14px;
-    padding: 16px;
-    position: fixed;
-    z-index: 1;
-    right: 40px;
-    top: 20px;
-}
-
-#correctbar{
-    visibility: hidden;
-    min-width: 250px;
-    background-color: rgb(53, 172, 24);
-    color: rgb(255, 255, 255);
-    font-weight: bold;
-    text-align: center;
-    border-radius: 14px;
-    padding: 16px;
-    position: fixed;
-    z-index: 1;
-    right: 40px;
-    top: 20px;
-}
-
-#errorbar.show {
-    visibility: visible !important;
-    animation: fadein 0.5s, fadeout 0.5s 4.5s;
-}
-#correctbar.show {
-    visibility: visible !important;
-    animation: fadein 0.5s, fadeout 0.5s 4.5s;
-}
-
-#password-reset-success {
-    display: none;
-    background-color: #4CAF50; /* Green background color */
-    color: white; /* White text color */
-    text-align: center; /* Center-align text */
-    padding: 10px; /* Add some padding for better appearance */
-    position: fixed; /* Fixed position so it stays at the top */
-    top: 0; /* Position it at the top of the viewport */
-    left: 0; /* Position it on the left */
-    width: 100%; /* Full width */
-    z-index: 9999; /* Make sure it's above other elements */
-}
-.error-message{
-	display: none;
-	color: red;
-	
-}
-
-.resetemail,
-.newpassword,
-.confirm-new-password{
-	
-}
-
-/* bootstrap classes */
-/* .modal-dialog {
-	height: 100vh !important;
-	display: flex;
-  }
-  
-  .modal-content {
-	margin: auto !important;
-	height: fit-content !important;
-  } */
-
-
-
+/* forgot password modal */
 .card{
 	padding-top: 5%;
     padding-bottom: 5%;
 	padding-left: 5%;
 	padding-right: 5%;
-
     border: 2px solid black;
-    /* padding: 3em; */
     display: flex;
     flex-direction: column;
     gap: 1em;
@@ -194,24 +69,6 @@ a{
     border-radius: 14px;
     background-color: rgb(208, 226, 241);
 
-}
-h2 {
-    font-size: 1.5rem;
-    margin-top: 10px;
-    text-transform: uppercase;
-}
-p {
-    font-size: 16px;
-}
-.passInput {
-    /* margin-top: 10px; */
-    width: 80%;
-    /* background: transparent; */
-    /* border: none; */
-    /* border-bottom: 2px solid deepskyblue; */
-    font-size: 15px;
-    /* color: white; */
-    /* outline: none; */
 }
 .lock{
     margin: 0;
@@ -225,32 +82,22 @@ p {
     padding: 10px;
     text-transform: uppercase;
 }
-
-.signuplinkdiv{
-	margin: 0;
+#password-reset-success {
+    display: none;
+    background-color: #4CAF50;
+    color: white; 
+    text-align: center; 
+    padding: 10px; 
+    position: fixed; 
+    top: 0;
+    left: 0; 
+    width: 100%; 
+    z-index: 9999; 
 }
 
-@keyframes fadein{
-    from{
-        right: 0;
-        opacity: 0;
-    }
-    to{
-        right: 40px;
-        opacity: 1;
-    }
-}
 
-@keyframes fadeout {
-    from{
-        right: 40px;
-        opacity: 1;
-    }
-    to{
-        right: 0;
-        opacity: 0;
-    }
-}
+/* media queries */
+
 @media (max-width:600px) {
 
 	.main-div {
@@ -305,7 +152,6 @@ p {
 		font-size: 14px;
 	}
 }
-
 @media (max-width:425px) {
 
 	.main-div {
@@ -363,7 +209,6 @@ p {
 		font-size: 15px;
 	}
 }
-
 @media (max-width:325px) {
 
 	.main-div {
@@ -418,8 +263,6 @@ p {
 		font-size: 10px;
 	}
 }
-
-
 @media (max-width:197px) {
 
 	.main-div {

@@ -1,0 +1,41 @@
+@import url('centraol.css');
+
+.wrapper{
+    background-color: #2e2e2e;
+}
+
+.textarea{
+	background: rgba(129, 92, 92, 0.075);
+	border-top: 2px solid black;
+	border-left: 2px solid black;
+	border-bottom: 2px solid grey;
+	border-right: 2px solid grey;
+}
+
+input[type=date] {
+    background: rgba(129, 92, 92, 0.075);
+}
+
+.signup-div {
+	width: auto;
+    height: 97vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+    background-color: #fff;
+	border: rgb(0, 0, 0) 2px solid;
+	border-radius: 14px;
+	box-shadow: 2px 4px 10px  black;
+}
+
+
+.btnclass{
+    padding-left: 35%;
+}
+
+form{
+    max-width: max-content;
+    width: 100%;
+}
+
+

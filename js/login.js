@@ -1,28 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-const userJson = `[
-    {
-        "id" : 1,
-        "name" : "Sanket Nagare",
-        "email" : "sanket@gmail.com",
-        "password" : "123",
-        "phone" : "1234567890",
-        "DOB" : "2001-09-29"
-    },
-    {
-        "id" : 2,
-        "name" : "Sanket Nagare",
-        "email" : "sanket2@gmail.com",
-        "password" : "123",
-        "phone" : "1234567890",
-        "DOB" : "2001-09-29"
-    }
-]`
-
-// const users = JSON.parse(userJson);
-
-// localStorage.setItem("users", JSON.stringify(users));
-
+//listner for login form submit
 document.getElementById("loginForm").addEventListener("submit", function(event) {
     event.preventDefault(); 
     submitLoginForm();
@@ -33,6 +11,7 @@ function storeLoggedInUser(user) {
     localStorage.setItem("loggedInUser", JSON.stringify(user));
 }
 
+//function to handle login submission
 function submitLoginForm() {
     let emailInput = document.getElementById("username");
     let passwordInput = document.getElementById("password");
@@ -46,7 +25,7 @@ function submitLoginForm() {
     // Retrieve user data
     const storedUsers = JSON.parse(localStorage.getItem("users")) || [];
 
-   // Flag to track login status
+   //to track login status
    let isLoggedIn = false;
    
    
@@ -62,27 +41,27 @@ function submitLoginForm() {
     console.log(email);
     console.log(password);
 
-    let isValidUser = false; // Flag to track if a valid user is found
+    let isValidUser = false; // to track if a valid user is found
 
-for (const user of storedUsers) {
-    if (email === user.email && password === user.password) {
-        isValidUser = true;
-        break; 
-    } 
-    else if (email !== user.email && password === user.password) {
-        emailInput.classList.add("red-border");
-        passwordInput.classList.remove("red-border");
-    } 
-    else if (password !== user.password && email === user.email) {
-        passwordInput.classList.add("red-border");
-        emailInput.classList.remove("red-border");
+    //validations
+    for (const user of storedUsers) {
+        if (email === user.email && password === user.password) {
+            isValidUser = true;
+            break; 
+        } 
+        else if (email !== user.email && password === user.password) {
+            emailInput.classList.add("red-border");
+            passwordInput.classList.remove("red-border");
+        } 
+        else if (password !== user.password && email === user.email) {
+            passwordInput.classList.add("red-border");
+            emailInput.classList.remove("red-border");
+        }
+        else if(email==="" && password===""){
+            passwordInput.classList.add("red-border");
+            emailInput.classList.add("red-border");
+        }
     }
-    else if(email==="" && password===""){
-        passwordInput.classList.add("red-border");
-        emailInput.classList.add("red-border");
-    }
-
-}
     
     console.log(storedUsers);
     
@@ -100,8 +79,7 @@ for (const user of storedUsers) {
             storeLoggedInUser(loggedInUser);
             window.location.href = "home.html";
         }, 2000);
-    }
-    else{
+    } else{
         error.className = "show"
         setTimeout(function() {
             error.className = error.className.replace("show", "")
@@ -125,8 +103,6 @@ document.getElementById("save-changes-button").addEventListener("click", functio
     const forgotEmailInput = document.querySelector(".resetemail");
     const newPasswordInput = document.querySelector(".newpassword");
     const confirmNewPassInput = document.querySelector(".confirm-new-password");
-
-
 
     const passwordResetSuccess = document.getElementById("password-reset-success");
     var passwordError = document.getElementById("password-error");
@@ -166,13 +142,8 @@ document.getElementById("save-changes-button").addEventListener("click", functio
         newPasswordInput.classList.add("red-border");
         confirmNewPassInput.classList.add("red-border");    
         return;
-    }
-
-    else{
+    } else{
         passwordError.style.display = "none";
-        // forgotEmailInput.classList.remove("red-border");
-        // newPasswordInput.classList.remove("red-border");
-        // confirmNewPassInput.classList.remove("red-border");
     }
 
 
@@ -186,10 +157,8 @@ document.getElementById("save-changes-button").addEventListener("click", functio
             user.password = newPassword;
 
             localStorage.setItem("users", JSON.stringify(storedUsers));
-            
-            // $('#forgot-password').modal('hide');
 
-            // Display the success message after a brief delay
+            // Display the success message after a delay
             const passwordResetSuccess = document.getElementById("password-reset-success");
             passwordResetSuccess.style.display = "block";
 
