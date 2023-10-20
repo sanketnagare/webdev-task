@@ -229,8 +229,6 @@ let languages = JSON.parse(localStorage.getItem("languages"));
         //store the updated loggedInUser object in localStorage
         updateLoggedInUser(loggedInUser);
 
-        console.log("Closing modal");
-
 
         //close the modal
         $('#edit-details-modal').modal('hide');
@@ -241,8 +239,6 @@ let languages = JSON.parse(localStorage.getItem("languages"));
         setTimeout(function() {
             editsuccess.className = editsuccess.className.replace("show", "");
         }, 2000);
-
-        console.log("i was here");
 
 
         //display updated user details

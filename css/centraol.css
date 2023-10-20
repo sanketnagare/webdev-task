@@ -1,3 +1,7 @@
+/* This is central css file that contains all the common css properties that will be used 
+in signup form and login form */
+
+
 body {
     margin: 0;
     padding: 0;
@@ -22,6 +26,13 @@ body {
 
 .red-border {
     border: 2px solid red;
+}
+.textarea{
+	background: rgba(129, 92, 92, 0.075);
+	border-top: 2px solid #000000;
+	border-left: 2px solid #000000;
+	border-bottom: 2px solid #808080;
+	border-right: 2px solid #808080;
 }
 #errorbar {
     visibility: hidden;

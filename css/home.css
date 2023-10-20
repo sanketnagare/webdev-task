@@ -1,3 +1,9 @@
+/* This is a css file for home page which contains navbar, sidebar and main content.
+page is divided in to 2 rows one for navbar and one for main content.
+In main content there are 2 colums one for content and one for sidebar */
+
+@import url('centraol.css');
+
 body{
     box-sizing: border-box;
     min-height: 100vh;
@@ -11,7 +17,6 @@ body{
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
     transition: all 0.4s;
     z-index: 1;
-    /* overflow-y: auto; */
 }
 .navbar-row{
     z-index: 2;
@@ -96,13 +101,7 @@ body{
 .menu .item .sub-menu a{
     padding-left: 4rem;
 }
-.textarea{
-	background: rgba(129, 92, 92, 0.075);
-	border-top: 2px solid black;
-	border-left: 2px solid black;
-	border-bottom: 2px solid grey;
-	border-right: 2px solid grey;
-}
+
 #edit-preffered-language{
     background: rgba(129, 92, 92, 0.075);
     box-shadow: none;

@@ -103,14 +103,12 @@ document.addEventListener("DOMContentLoaded", function() {
         const isUser = document.querySelectorAll("input.userSubOption:checked").length > 0;
 
         if(isAdmin && isUser) {
-            console.log("Select one admin or user");
+            // error select one admin or user
             return;
         }
 
-
         let selectedRole = "";
 
-        console.log(typeof(isAdmin));
 
         if(isAdmin) {
             selectedRole = 'admin';
@@ -173,7 +171,6 @@ function submitSignupForm(phoneInput, checkedValues, selectedRole) {
 
     //skills tagnames array
     let tagNames = window.amsifySuggestagsInstance.tagNames;
-    console.log("Tag Names:", tagNames);
 
     
     let fnameValue = fname.value.trim();
@@ -235,7 +232,6 @@ function submitSignupForm(phoneInput, checkedValues, selectedRole) {
         emailerror.style.display = "none"
     }
 
-    console.log("Phone Number:", phoneNumber);
     const indianPhoneNumberRegex = /^\+91\d{10}$/;
     if (!indianPhoneNumberRegex.test(phoneNumber) || phoneNumber === "") {
         phoneerror.textContent = "Phone number should be 10 digits long";

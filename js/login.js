@@ -37,10 +37,6 @@ function submitLoginForm() {
     }
    }
 
-   //user input values
-    console.log(email);
-    console.log(password);
-
     let isValidUser = false; // to track if a valid user is found
 
     //validations
@@ -63,7 +59,6 @@ function submitLoginForm() {
         }
     }
     
-    console.log(storedUsers);
     
     if(isValidUser && isLoggedIn) {
         emailInput.classList.remove("red-border");
@@ -97,8 +92,6 @@ $('#forgot-password').on('show.bs.modal', function (e) {
 
 document.getElementById("save-changes-button").addEventListener("click", function() {
 
-    
-    console.log("Save changes button clicked");
 
     const forgotEmailInput = document.querySelector(".resetemail");
     const newPasswordInput = document.querySelector(".newpassword");
